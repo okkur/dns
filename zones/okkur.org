@@ -1,5 +1,5 @@
 @                   3600 IN SOA     nsx.gitns.com. domains.nzt.ventures. (
-                                      2020032501   ; serial
+                                      2020040401   ; serial
                                       5m           ; refresh
                                       5m           ; retry
                                       1w           ; expire
@@ -57,6 +57,9 @@ _redirect                             3600 IN TXT     "v=txtv0;type=dockerv2;>St
 $ORIGIN git.okkur.org.
 @                                     86400 IN CNAME   git.txtd.io.
 _redirect                              3600 IN TXT     "v=txtv0;type=path;>Strict-Transport-Security=max-age%3D163072000;to=https://about.okkur.org/"
+
+; dns (okkur)
+_redirect.dns                          3600 IN TXT     "v=txtv0;type=git;website=https://github.com/okkur/dns;to=https://github.com/okkur/dns.git"
 
 ; website (okkur)
 _redirect.website                      3600 IN TXT     "v=txtv0;type=git;website=https://github.com/okkur/website;to=https://github.com/okkur/website.git"
