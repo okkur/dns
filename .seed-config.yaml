@@ -1,0 +1,44 @@
+project:
+  name: "Okkur DNS"
+  state: "stable"
+  image: ""
+  website: "https://about.okkur.org"
+  oneLiner: "Okkur DNS Zone Files"
+  description: |
+    Okkur related zone files served by [gitns.com](https://about.gitns.com).
+    DNS entries are stored as per zone files using the bind format.
+  version: "v0.1.0"
+  mainLicense: "CCByNcSa"
+
+contributionLinks:
+  issueTemplate: "/.github/ISSUE_TEMPLATE.md"
+  starterIssues: "https://github.com/okkur/dns/labels/starter%20issue"
+
+emails:
+  security: "security@okkur.org"
+  coc: "coc@okkur.org"
+
+copyright:
+  year: "2019"
+
+cla:
+  copyrightHolder: "nzt.ventures GmbH"
+  mail: "legal@nzt.ventures"
+
+maintainers:
+  - name: "Michael Grosser"
+    nick: "stp-ip"
+
+repo:
+  link: "https://git.okkur.org/dns"
+  type: "Github"
+
+badges:
+  - image: "https://img.shields.io/badge/state-stable-green.svg"
+    alt: "state"
+  - image: "https://img.shields.io/github/license/okkur/dns.svg"
+    link: "LICENSE"
+    alt: "license"
+
+reposeed:
+  configVersion: "v1"
