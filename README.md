@@ -25,5 +25,5 @@ Best place to start is our [contribution guide](/CONTRIBUTING.md).
 
 ---
 
-Copyright 2019 - The Okkur DNS Authors
+Copyright 2020 - The Okkur DNS Authors
 
