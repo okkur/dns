@@ -1,5 +1,5 @@
 @                   3600 IN SOA     nsx.gitns.com. domains.nzt.ventures. (
-                                      2020042302   ; serial
+                                      2020042303   ; serial
                                       5m           ; refresh
                                       5m           ; retry
                                       1w           ; expire
@@ -49,9 +49,8 @@ google._domainkey   3600 IN TXT     "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFA
 ; containers
 ; TODO: specific path based image?!
 $ORIGIN c.okkur.org.
-@                                     86400 IN CNAME   txtd.io.
-_redirect                             3600 IN TXT     "v=txtv0;type=dockerv2;>Strict-Transport-Security=max-age%3D163072000;to=https://gcr.io/okkur-2300615/;website=https://gcr.io/v2/okkur-2300615/tags/list"
-
+@                                     86400 IN CNAME   docker.txtd.io.
+_redirect                             3600 IN TXT     "v=txtv0;type=dockerv2;to=https://gcr.io/okkur-2300615/"
 
 ; git repositories
 $ORIGIN git.okkur.org.
