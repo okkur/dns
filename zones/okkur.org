@@ -1,5 +1,5 @@
 @                   3600 IN SOA     nsx.gitns.com. domains.nzt.ventures. (
-                                      2020042303   ; serial
+                                      2020052201   ; serial
                                       5m           ; refresh
                                       5m           ; retry
                                       1w           ; expire
@@ -102,6 +102,8 @@ _redirect.gomiler                      3600 IN TXT     "v=txtv0;type=gometa;to=h
 
 ; gomods
 _redirect.gomods                       3600 IN TXT     "v=txtv0;type=gometa;to=https://github.com/okkur/gomods;website=https://gomods.okkur.org/"
+; TODO: Remove this wildcard after txtdirect/txtdirect#342 gets fixed
+_redirect._._.gomods                   3600 IN TXT     "v=txtv0;type=gometa;to=https://github.com/okkur/gomods;website=https://gomods.okkur.org/"
 
 ; reposeed
 _redirect.reposeed                     3600 IN TXT     "v=txtv0;type=gometa;to=https://github.com/okkur/reposeed;website=https://reposeed.okkur.org/"
@@ -109,6 +111,8 @@ _redirect.reposeed-server              3600 IN TXT     "v=txtv0;type=gometa;to=h
 
 ; torproxy
 _redirect.torproxy                     3600 IN TXT     "v=txtv0;type=gometa;to=https://github.com/okkur/torproxy;website=https://torproxy.okkur.org/"
+; TODO: Remove this wildcard after txtdirect/txtdirect#342 gets fixed
+_redirect._._.torproxy                 3600 IN TXT     "v=txtv0;type=gometa;to=https://github.com/okkur/torproxy;website=https://torproxy.okkur.org/"
 
 
 ; project short links
