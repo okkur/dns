@@ -75,9 +75,6 @@ _redirect.gomiler                      3600 IN TXT     "v=txtv0;type=git;website
 ; gomods
 _redirect.gomods                       3600 IN TXT     "v=txtv0;type=git;website=https://github.com/okkur/gomods;to=https://github.com/okkur/gomods.git"
 
-; regren
-_redirect.regren                       3600 IN TXT     "v=txtv0;type=git;website=https://github.com/okkur/regren;to=https://github.com/okkur/regren.git"
-
 ; reposeed
 _redirect.reposeed                     3600 IN TXT     "v=txtv0;type=git;website=https://github.com/okkur/reposeed;to=https://github.com/okkur/reposeed.git"
 
