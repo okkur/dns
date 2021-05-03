@@ -1,5 +1,5 @@
 @                   3600 IN SOA     nsx.gitns.com. domains.nzt.ventures. (
-                                      2020052201   ; serial
+                                      2021050302   ; serial
                                       5m           ; refresh
                                       5m           ; retry
                                       1w           ; expire
@@ -28,6 +28,9 @@ blog               86400 IN CNAME   okkur-blog.netlify.com.
 
 syna-demo          86400 IN CNAME   syna-demo.netlify.com.
 
+chat               86400 IN CNAME   txtd.io.
+_redirect.chat     86400 IN TXT     "v=txtv0;to=https://chat.okkur.net{uri}"
+
 @                   3600 IN MX 1    ASPMX.L.google.com.
 @                   3600 IN MX 5    ALT1.ASPMX.L.GOOGLE.COM.
 @                   3600 IN MX 5    ALT2.ASPMX.L.GOOGLE.COM.
@@ -35,8 +38,10 @@ syna-demo          86400 IN CNAME   syna-demo.netlify.com.
 @                   3600 IN MX 10   ASPMX3.GOOGLEMAIL.COM.
 @                   3600 IN TXT     "v=spf1 include:_spf.google.com ~all"
 
-@                   3600 IN TXT     "google-site-verification=3wdB9pp6Vrix9ZUSJwSwL1YWob5RG0xWecn_z1bRagM"
-google._domainkey   3600 IN TXT     "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApaE0kzJJ90ao04+ORummocIaa+vZEI3f601q7hX+fNHkd7j+wZbBaWbfSGz2gOPPW7eRcdFLnTpu3wGCRARb9nj2hucWZMMUTCLMbwJJf8XluLA13UCVRsy49iTVeqy14ag7SrPyqEtr4ISJbbrRjLXwXz2naHmPBgZ5u88hyYuIisfnj8x8aDo3Tw664Cu3YPc0/8Kbl4mHtJI0WTfEdcoA3MBErIlxLi7md/4MqPitAcDszZDhGvKUQj3vy8RKFjZasCzPXTiDcgW67NtWqGtNUZDng3qPorLZyEYrgEHXL0HlYimxPFZrWviRzRHUStI+iFO5rIS7bYbT/RsNRQIDAQAB"
+@                   3600 IN TXT     "google-site-verification=La6yrfjiEFSaqhzTmmGRNVSpzuoQUjDJ--ttGHdKUeE"
+
+20201124134816pm._domainkey 3600 IN TXT "k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCW2/WNh5bKNXSbINli3+qh1M7fjHWGpMwImQKfSdjimEEA3t/jqJcR/QqNDEvIeqNeGSiglCuOBfUKFGL0Pq6JZo746+F+XvP/j5Y2R07sZ+DvoW30ETaHsaLc7IEKD4XMYK7PpmnfuR8X3ZXRCJLfYZytLhe4uLRp8GxycYXRUQIDAQAB"
+bounces            86400 IN CNAME  pm.mtasv.net.
 
 325349d0cf4e929ffa91001c9b9dbb44 3600 IN CNAME verify.bing.com.
 8be282cd81249c5ef1d94978fb4289e7.about 3600 IN CNAME verify.bing.com.
@@ -49,8 +54,9 @@ google._domainkey   3600 IN TXT     "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFA
 ; containers
 ; TODO: specific path based image?!
 $ORIGIN c.okkur.org.
-@                                     86400 IN CNAME   docker.txtd.io.
-_redirect                             3600 IN TXT     "v=txtv0;type=dockerv2;to=https://gcr.io/okkur-2300615/"
+@                                     86400 IN CNAME   txtd.io.
+_redirect                             3600 IN TXT     "v=txtv0;type=dockerv2;>Strict-Transport-Security=max-age%3D163072000;to=https://gcr.io/okkur-2300615/;website=https://gcr.io/v2/okkur-2300615/tags/list"
+
 
 ; git repositories
 $ORIGIN git.okkur.org.
