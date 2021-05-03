@@ -1,5 +1,5 @@
 @                   3600 IN SOA     nsx.gitns.com. domains.nzt.ventures. (
-                                      2020052201   ; serial
+                                      2021050302   ; serial
                                       5m           ; refresh
                                       5m           ; retry
                                       1w           ; expire
@@ -28,6 +28,9 @@ blog               86400 IN CNAME   okkur-blog.netlify.com.
 
 syna-demo          86400 IN CNAME   syna-demo.netlify.com.
 
+chat               86400 IN CNAME   txtd.io.
+_redirect.chat     86400 IN TXT     "v=txtv0;to=https://chat.okkur.net{uri}"
+
 @                   3600 IN MX 1    ASPMX.L.google.com.
 @                   3600 IN MX 5    ALT1.ASPMX.L.GOOGLE.COM.
 @                   3600 IN MX 5    ALT2.ASPMX.L.GOOGLE.COM.
@@ -35,8 +38,10 @@ syna-demo          86400 IN CNAME   syna-demo.netlify.com.
 @                   3600 IN MX 10   ASPMX3.GOOGLEMAIL.COM.
 @                   3600 IN TXT     "v=spf1 include:_spf.google.com ~all"
 
-@                   3600 IN TXT     "google-site-verification=3wdB9pp6Vrix9ZUSJwSwL1YWob5RG0xWecn_z1bRagM"
-google._domainkey   3600 IN TXT     "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApaE0kzJJ90ao04+ORummocIaa+vZEI3f601q7hX+fNHkd7j+wZbBaWbfSGz2gOPPW7eRcdFLnTpu3wGCRARb9nj2hucWZMMUTCLMbwJJf8XluLA13UCVRsy49iTVeqy14ag7SrPyqEtr4ISJbbrRjLXwXz2naHmPBgZ5u88hyYuIisfnj8x8aDo3Tw664Cu3YPc0/8Kbl4mHtJI0WTfEdcoA3MBErIlxLi7md/4MqPitAcDszZDhGvKUQj3vy8RKFjZasCzPXTiDcgW67NtWqGtNUZDng3qPorLZyEYrgEHXL0HlYimxPFZrWviRzRHUStI+iFO5rIS7bYbT/RsNRQIDAQAB"
+@                   3600 IN TXT     "google-site-verification=La6yrfjiEFSaqhzTmmGRNVSpzuoQUjDJ--ttGHdKUeE"
+
+20201124134816pm._domainkey 3600 IN TXT "k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCW2/WNh5bKNXSbINli3+qh1M7fjHWGpMwImQKfSdjimEEA3t/jqJcR/QqNDEvIeqNeGSiglCuOBfUKFGL0Pq6JZo746+F+XvP/j5Y2R07sZ+DvoW30ETaHsaLc7IEKD4XMYK7PpmnfuR8X3ZXRCJLfYZytLhe4uLRp8GxycYXRUQIDAQAB"
+bounces            86400 IN CNAME  pm.mtasv.net.
 
 325349d0cf4e929ffa91001c9b9dbb44 3600 IN CNAME verify.bing.com.
 8be282cd81249c5ef1d94978fb4289e7.about 3600 IN CNAME verify.bing.com.
@@ -49,16 +54,14 @@ google._domainkey   3600 IN TXT     "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFA
 ; containers
 ; TODO: specific path based image?!
 $ORIGIN c.okkur.org.
-@                                     86400 IN CNAME   docker.txtd.io.
-_redirect                             3600 IN TXT     "v=txtv0;type=dockerv2;to=https://gcr.io/okkur-2300615/"
+@                                     86400 IN CNAME   txtd.io.
+_redirect                             3600 IN TXT     "v=txtv0;type=dockerv2;>Strict-Transport-Security=max-age%3D163072000;to=https://gcr.io/okkur-2300615/;website=https://gcr.io/v2/okkur-2300615/tags/list"
+
 
 ; git repositories
 $ORIGIN git.okkur.org.
 @                                     86400 IN CNAME   git.txtd.io.
 _redirect                              3600 IN TXT     "v=txtv0;type=path;>Strict-Transport-Security=max-age%3D163072000;to=https://about.okkur.org/"
-
-; dns (okkur)
-_redirect.dns                          3600 IN TXT     "v=txtv0;type=git;website=https://github.com/okkur/dns;to=https://github.com/okkur/dns.git"
 
 ; website (okkur)
 _redirect.website                      3600 IN TXT     "v=txtv0;type=git;website=https://github.com/okkur/website;to=https://github.com/okkur/website.git"
@@ -74,6 +77,9 @@ _redirect.gomiler                      3600 IN TXT     "v=txtv0;type=git;website
 
 ; gomods
 _redirect.gomods                       3600 IN TXT     "v=txtv0;type=git;website=https://github.com/okkur/gomods;to=https://github.com/okkur/gomods.git"
+
+; regren
+_redirect.regren                       3600 IN TXT     "v=txtv0;type=git;website=https://github.com/okkur/regren;to=https://github.com/okkur/regren.git"
 
 ; reposeed
 _redirect.reposeed                     3600 IN TXT     "v=txtv0;type=git;website=https://github.com/okkur/reposeed;to=https://github.com/okkur/reposeed.git"
@@ -99,8 +105,6 @@ _redirect.gomiler                      3600 IN TXT     "v=txtv0;type=gometa;to=h
 
 ; gomods
 _redirect.gomods                       3600 IN TXT     "v=txtv0;type=gometa;to=https://github.com/okkur/gomods;website=https://gomods.okkur.org/"
-; TODO: Remove this wildcard after txtdirect/txtdirect#342 gets fixed
-_redirect._._.gomods                   3600 IN TXT     "v=txtv0;type=gometa;to=https://github.com/okkur/gomods;website=https://gomods.okkur.org/"
 
 ; reposeed
 _redirect.reposeed                     3600 IN TXT     "v=txtv0;type=gometa;to=https://github.com/okkur/reposeed;website=https://reposeed.okkur.org/"
@@ -108,8 +112,6 @@ _redirect.reposeed-server              3600 IN TXT     "v=txtv0;type=gometa;to=h
 
 ; torproxy
 _redirect.torproxy                     3600 IN TXT     "v=txtv0;type=gometa;to=https://github.com/okkur/torproxy;website=https://torproxy.okkur.org/"
-; TODO: Remove this wildcard after txtdirect/txtdirect#342 gets fixed
-_redirect._._.torproxy                 3600 IN TXT     "v=txtv0;type=gometa;to=https://github.com/okkur/torproxy;website=https://torproxy.okkur.org/"
 
 
 ; project short links
@@ -121,9 +123,8 @@ _redirect.code                         3600 IN TXT     "v=txtv0;type=host;to=htt
 _redirect.issues                       3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/actions-godocit/issues"
 _redirect.license                      3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/actions-godocit/blob/master/LICENSE"
 
-; TODO: semver regex usage see txtdirect/dns
-_redirect.releases                     3600 IN TXT     "v=txtv0;type=path;to=https://github.com/okkur/actions-godocit/releases/"
-_redirect._.releases                   3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/actions-godocit/releases/tag/{2}"
+_redirect.releases                     3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/actions-godocit/releases/"
+_redirect._.releases                   3600 IN TXT     "v=txtv0;type=path;re=^((([v][0-9]+|[0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)$;to=https://github.com/okkur/actions-godocit/releases/tag/{1}"
 
 ; gomiler
 $ORIGIN gomiler.okkur.org.
@@ -133,8 +134,8 @@ _redirect.code                         3600 IN TXT     "v=txtv0;type=host;to=htt
 _redirect.issues                       3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur-incubator/gomiler/issues"
 _redirect.license                      3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur-incubator/gomiler/blob/master/LICENSE"
 
-_redirect.releases                     3600 IN TXT     "v=txtv0;type=path;to=https://github.com/okkur-incubator/gomiler/releases/"
-_redirect._.releases                   3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur-incubator/gomiler/releases/tag/{2}"
+_redirect.releases                     3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur-incubator/gomiler/releases/"
+;_redirect._.releases                   3600 IN TXT     "v=txtv0;type=path;re=^((([v][0-9]+|[0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)$;to=https://github.com/okkur-incubator/gomiler/releases/tag/{1}"
 
 ; gomods
 $ORIGIN gomods.okkur.org.
@@ -144,8 +145,8 @@ _redirect.code                         3600 IN TXT     "v=txtv0;type=host;to=htt
 _redirect.issues                       3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/gomods/issues"
 _redirect.license                      3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/gomods/blob/master/LICENSE"
 
-_redirect.releases                     3600 IN TXT     "v=txtv0;type=path;to=https://github.com/okkur/gomods/releases/"
-_redirect._.releases                   3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/gomods/releases/tag/{2}"
+_redirect.releases                     3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/gomods/releases/"
+;_redirect._.releases                   3600 IN TXT     "v=txtv0;type=path;re=^((([v][0-9]+|[0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)$;to=https://github.com/okkur/gomods/releases/tag/{1}"
 
 _redirect.docs                         3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/gomods/blob/master/README.md"
 
@@ -158,8 +159,8 @@ _redirect.code                         3600 IN TXT     "v=txtv0;type=host;to=htt
 _redirect.issues                       3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/reposeed/issues"
 _redirect.license                      3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/reposeed/blob/master/LICENSE"
 
-_redirect.releases                     3600 IN TXT     "v=txtv0;type=path;to=https://github.com/okkur/reposeed/releases/"
-_redirect._.releases                   3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/reposeed/releases/tag/{2}"
+_redirect.releases                     3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/reposeed/releases/"
+;_redirect._.releases                   3600 IN TXT     "v=txtv0;type=path;re=^((([v][0-9]+|[0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)$;to=https://github.com/okkur/reposeed/releases/tag/{1}"
 
 ; syna
 $ORIGIN syna.okkur.org.
@@ -170,8 +171,8 @@ _redirect.code                         3600 IN TXT     "v=txtv0;type=host;to=htt
 _redirect.issues                       3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/syna/issues"
 _redirect.license                      3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/syna/blob/master/LICENSE"
 
-_redirect.releases                     3600 IN TXT     "v=txtv0;type=path;to=https://github.com/okkur/syna/releases/"
-_redirect._.releases                   3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/syna/releases/tag/{2}"
+_redirect.releases                     3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/syna/releases/"
+;_redirect._.releases                   3600 IN TXT     "v=txtv0;type=path;re=^((([v][0-9]+|[0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)$;to=https://github.com/okkur/syna/releases/tag/{1}"
 
 _redirect.docs                         3600 IN TXT     "v=txtv0;type=host;to=https://about.okkur.org/syna/docs/"
 _redirect.development.docs             3600 IN TXT     "v=txtv0;type=host;to=https://about.okkur.org/syna/docs/development/"
@@ -191,7 +192,7 @@ _redirect.code                         3600 IN TXT     "v=txtv0;type=host;to=htt
 _redirect.issues                       3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/torproxy/issues"
 _redirect.license                      3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/torproxy/blob/master/LICENSE"
 
-_redirect.releases                     3600 IN TXT     "v=txtv0;type=path;to=https://github.com/okkur/torproxy/releases/"
-_redirect._.releases                   3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/torproxy/releases/tag/{2}"
+_redirect.releases                     3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/torproxy/releases/"
+;_redirect._.releases                   3600 IN TXT     "v=txtv0;type=path;re=^((([v][0-9]+|[0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)$;to=https://github.com/okkur/torproxy/releases/tag/{1}"
 
 _redirect.docs                         3600 IN TXT     "v=txtv0;type=host;to=https://github.com/okkur/torproxy/blob/master/README.md"
