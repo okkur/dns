@@ -1,0 +1,39 @@
+@                   3600 IN SOA     nsx.gitns.com. domains.nzt.ventures. (
+                                      2020112001   ; serial
+                                      5m           ; refresh
+                                      5m           ; retry
+                                      1w           ; expire
+                                      12h    )     ; minimum
+
+@                  86400 IN NS      nsx.gitns.com.
+@                  86400 IN NS      nsx.gitns.nl.
+@                  86400 IN NS      nsx.gitns.net.
+@                  86400 IN NS      nsx.gitns.org.
+@                  86400 IN NS      nsx.gitns.io.
+
+; redirect
+@                  86400 IN A       45.85.238.5
+@                  86400 IN AAAA    2a0e:c885:5::1
+
+_redirect          86400 IN TXT     "v=txtv0;type=host;>Strict-Transport-Security=max-age%3D163072000%3B%20includeSubDomains%3B%20preload;to=https://about.okkur.org"
+
+stats              86400 IN A       130.211.28.170
+stats              86400 IN AAAA    2600:1901:0:346:0:0:0:0
+
+use                86400 IN A       130.211.28.170
+use                86400 IN AAAA    2600:1901:0:346:0:0:0:0
+
+chat               86400 IN A       34.76.48.85
+
+@                   3600 IN MX 1    ASPMX.L.google.com.
+@                   3600 IN MX 5    ALT1.ASPMX.L.GOOGLE.COM.
+@                   3600 IN MX 5    ALT2.ASPMX.L.GOOGLE.COM.
+@                   3600 IN MX 10   ASPMX2.GOOGLEMAIL.COM.
+@                   3600 IN MX 10   ASPMX3.GOOGLEMAIL.COM.
+@                   3600 IN TXT     "v=spf1 include:_spf.google.com ~all"
+
+@                   3600 IN TXT     "google-site-verification=h0RK1JGRlc4jRFr7oQ0Ns3SGthKjJNd3SedaQuLVHW8"
+
+@                    300 IN CAA 0   issue "letsencrypt.org"
+@                    300 IN CAA 0   issuewild ";"
+@                    300 IN CAA 0   iodef "mailto:caa@nzt.ventures"

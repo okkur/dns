@@ -1,0 +1,73 @@
+@                   3600 IN SOA     ns.gitns.com. domains.nzt.ventures. (
+                                      2021050401   ; serial
+                                      5m           ; refresh
+                                      5m           ; retry
+                                      1w           ; expire
+                                      12h    )     ; minimum
+
+@                  86400 IN NS      ns.gitns.com.
+@                  86400 IN NS      ns.gitns.nl.
+@                  86400 IN NS      ns.gitns.net.
+@                  86400 IN NS      ns.gitns.org.
+@                  86400 IN NS      ns.gitns.io.
+
+
+; short links + default redirect
+@                  86400 IN A       45.85.238.5
+@                  86400 IN AAAA    2a0e:c885:5::1
+
+_redirect                               300 IN TXT     "v=txtv0;type=path;>Strict-Transport-Security=max-age%3D163072000%3B%20includeSubDomains%3B%20preload;to=https://about.okkur.org/#resumic"
+_redirect.code                          300 IN TXT     "v=txtv0;type=host;to=https://github.com/resumic/schema"
+_redirect.issues                        300 IN TXT     "v=txtv0;type=host;to=https://github.com/resumic/schema/issues"
+_redirect.license                       300 IN TXT     "v=txtv0;type=host;to=https://github.com/resumic/schema/blob/master/LICENSE"
+
+_redirect.releases                      300 IN TXT     "v=txtv0;type=host;to=https://github.com/resumic/schema/releases"
+
+_redirect.chat                          300 IN TXT     "v=txtv0;type=host;to=https://3.basecamp.com/3920517/join/dKXZ5FDM4iWq"
+
+; placeholders used: profile.svg, project.svg, entity.svg, certificate.svg
+_redirect._.assets                      300 IN TXT     "v=txtv0;type=host;to=https://cdn.jsdelivr.net/gh/stp-ip/resumic-schema@iterations/media/placeholders/{file};code=302"
+
+
+about              86400 IN CNAME   txtd.io.
+_redirect.about    86400 IN TXT     "v=txtv0;type=host;to=https://about.okkur.org/#resumic"
+
+@                   3600 IN MX 1    ASPMX.L.google.com.
+@                   3600 IN MX 5    ALT1.ASPMX.L.GOOGLE.COM.
+@                   3600 IN MX 5    ALT2.ASPMX.L.GOOGLE.COM.
+@                   3600 IN MX 10   ASPMX2.GOOGLEMAIL.COM.
+@                   3600 IN MX 10   ASPMX3.GOOGLEMAIL.COM.
+@                   3600 IN TXT     "v=spf1 include:_spf.google.com ~all"
+
+@                   3600 IN TXT     "google-site-verification=Dj1Bi0dZIhiE7Xe_IHY3XuKXcLC-CkDztl73RpOE4l8"
+
+@                    300 IN CAA 0   issue "letsencrypt.org"
+@                    300 IN CAA 0   issuewild ";"
+@                    300 IN CAA 0   iodef "mailto:caa@nzt.ventures"
+
+
+; git
+$ORIGIN git.resumic.org.
+@                                     86400 IN CNAME   git.txtd.io.
+_redirect                               300 IN TXT     "v=txtv0;type=path;to=https://about.okkur.org/#resumic"
+_redirect.schema                        300 IN TXT     "v=txtv0;type=git;website=https://github.com/resumic/schema;to=https://github.com/resumic/schema.git"
+
+
+; go packages
+$ORIGIN go.resumic.org.
+@                                     86400 IN CNAME   gometa.txtd.io.
+_redirect                               300 IN TXT     "v=txtv0;type=gometa;to=https://about.okkur.org/#resumic"
+_redirect.resumic                       300 IN TXT     "v=txtv0;type=gometa;to=https://github.com/resumic/schema"
+_redirect.schema                        300 IN TXT     "v=txtv0;type=gometa;to=https://github.com/resumic{path}"
+
+; schema
+$ORIGIN schema.resumic.org.
+@                                     86400 IN CNAME   txtd.io.
+_redirect                               300 IN TXT     "v=txtv0;type=path;to=https://about.okkur.org/#resumic"
+_redirect.latest-json                   300 IN TXT     "v=txtv0;type=host;to=https://raw.githubusercontent.com/resumic/schema/master/schema.json"
+_redirect.test-json                     300 IN TXT     "v=txtv0;type=host;to=https://raw.githubusercontent.com/stp-ip/resumic-schema/iterations/schema.json"
+
+; legacy short links
+$ORIGIN s.resumic.org.
+@                                     86400 IN CNAME   txtd.io.
+_redirect                               300 IN TXT     "v=txtv0;type=host;to=https://resumic.org{uri}"
