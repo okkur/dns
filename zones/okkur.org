@@ -1,5 +1,5 @@
 @                   3600 IN SOA     nsx.gitns.com. domains.nzt.ventures. (
-                                      2021050302   ; serial
+                                      2021050401   ; serial
                                       5m           ; refresh
                                       5m           ; retry
                                       1w           ; expire
@@ -39,6 +39,7 @@ _redirect.chat     86400 IN TXT     "v=txtv0;to=https://chat.okkur.net{uri}"
 @                   3600 IN TXT     "v=spf1 include:_spf.google.com ~all"
 
 @                   3600 IN TXT     "google-site-verification=La6yrfjiEFSaqhzTmmGRNVSpzuoQUjDJ--ttGHdKUeE"
+google._domainkey   3600 IN TXT     "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmFUwt+1JznCD2qg6UcBPdqAWdwNGwlmz+xWnOaRWAFUHz5A3lOBPTEL8oyKokYdmvdJv84WZozuuq8A41FwzXwYNdg8oDrjYdvrwHp+nV321uyWnqUYNHZ6qKD675t0NwDsevK+4siV6lBCIupjuLIHNt8eWAiY2duYUHIbUpwGPVsaRyh1EFBzqBEHi1SBkuG9h5lQyEdHir/MnqaS4sCQGcJgHvT6JZy4VvvDrU3Jg0aUwI3RrNBy3j8pTa0zF/HDBMGCcnE8nUDSbyngDm8zf6ZNvyl7w1PhXTGZlw5E/Gd80z8S03PXEH/Ls5G3qmEGGQnNR2aNBweUqdTGGEQIDAQAB"
 
 20201124134816pm._domainkey 3600 IN TXT "k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCW2/WNh5bKNXSbINli3+qh1M7fjHWGpMwImQKfSdjimEEA3t/jqJcR/QqNDEvIeqNeGSiglCuOBfUKFGL0Pq6JZo746+F+XvP/j5Y2R07sZ+DvoW30ETaHsaLc7IEKD4XMYK7PpmnfuR8X3ZXRCJLfYZytLhe4uLRp8GxycYXRUQIDAQAB"
 bounces            86400 IN CNAME  pm.mtasv.net.

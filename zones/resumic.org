@@ -1,5 +1,5 @@
 @                   3600 IN SOA     ns.gitns.com. domains.nzt.ventures. (
-                                      2021050401   ; serial
+                                      2021050402   ; serial
                                       5m           ; refresh
                                       5m           ; retry
                                       1w           ; expire
@@ -40,6 +40,7 @@ _redirect.about    86400 IN TXT     "v=txtv0;type=host;to=https://about.okkur.or
 @                   3600 IN TXT     "v=spf1 include:_spf.google.com ~all"
 
 @                   3600 IN TXT     "google-site-verification=Dj1Bi0dZIhiE7Xe_IHY3XuKXcLC-CkDztl73RpOE4l8"
+google._domainkey   3600 IN TXT     "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjFhx9FPAByhQsEPQ3HdsutwGilOPi5OUeAbhgcyVLdc6RYswhJVa/OUZyn7klBnIUrO4bcRv2z5OD3+4Fr2U8bSwyh5JCgML8jFCisO0l0IbM2STFL9Cuzb9DeLX6DovOdwZ/QfirZFPGVws2vW47Lkj6BzynLdwzaYMhtpSDBpbP41Bpn6g5NRr9C6KYV5y58N+6Jh8NpwO2cJ3BGC0Y/FUpNYp/3kos4GVP7ijx7rRkvhKv+dU6NdSLHTL3W70gw4tTVsCt+oGWhSfUu/d46H+ZXL9qkaWAQH252vH3yKalyfGbSd5AP9Bf8JIwOW9z4fdCyMyoSlvUiALybeEnQIDAQAB"
 
 @                    300 IN CAA 0   issue "letsencrypt.org"
 @                    300 IN CAA 0   issuewild ";"
