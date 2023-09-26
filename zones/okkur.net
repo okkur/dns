@@ -32,7 +32,7 @@ chat               86400 IN A       34.76.48.85
 @                   3600 IN MX 10   ASPMX3.GOOGLEMAIL.COM.
 @                   3600 IN TXT     "v=spf1 include:_spf.google.com ~all"
 
-@                   3600 IN TXT     "google-site-verification=h0RK1JGRlc4jRFr7oQ0Ns3SGthKjJNd3SedaQuLVHW8"
+@                   3600 IN TXT     "google-site-verification=AOG4tpF72inn_pMA33A6QWBUR5hjocX0VV-9clpEH2Q"
 
 @                    300 IN CAA 0   issue "letsencrypt.org"
 @                    300 IN CAA 0   issuewild ";"
